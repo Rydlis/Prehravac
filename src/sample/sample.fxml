@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar style="-fx-background-color: transparent;">
+        <menus>
+          <Menu mnemonicParsing="false" text="Soubor">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleVyber" text="Otevřít" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleDelete" text="Vymazat" />
+              <MenuItem mnemonicParsing="false" onAction="#handleKonec" text="Zavřít" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Přehrávač">
+              <items>
+                  <CheckMenuItem mnemonicParsing="false" onAction="#handleNahoda" text="Nahodné" />
+                  <CheckMenuItem mnemonicParsing="false" onAction="#handleRepeat" text="Opakovat" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <ListView fx:id="list" layoutX="14.0" layoutY="29.0" prefWidth="609.0" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="30.0" />
+      <HBox alignment="CENTER" layoutX="150.0" layoutY="419.0" prefHeight="60.0" prefWidth="340.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <Button fx:id="prev" mnemonicParsing="false" onAction="#handlePrev" text="Prev" />
+            <Button fx:id="play" mnemonicParsing="false" onAction="#handlePlayStop" text="Play/Pause" />
+            <Button fx:id="next" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleNext" text="Next">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="4.0" layoutY="398.0" prefHeight="25.0" prefWidth="640.0" spacing="30.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <Label fx:id="start" text="0:00" />
+            <Slider fx:id="seekbar" blockIncrement="1.0">
+               <HBox.margin>
+                  <Insets right="5.0" top="5.0" />
+               </HBox.margin>
+            </Slider>
+            <Label fx:id="end" text="0:00" />
+         </children>
+      </HBox>
+      <HBox fillHeight="false" layoutX="220.0" layoutY="320.0" prefHeight="70.0" prefWidth="620.0" spacing="15.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <children>
+            <Label fx:id="artist" alignment="TOP_LEFT" />
+            <Label fx:id="song" />
+            <Label fx:id="album" alignment="CENTER_RIGHT">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
